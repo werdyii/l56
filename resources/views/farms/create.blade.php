@@ -23,6 +23,10 @@
         <button type="submit" class="btn btn-primary">
           Create
         </button>
+        <a href="{{ route('farms.index') }}"
+        class="btn btn-outline-primary"
+        role="button"
+        ><span class="fa fa-undo" aria-hidden="true"></span> Back farms</a>
       </div>
     </form>
   </div>

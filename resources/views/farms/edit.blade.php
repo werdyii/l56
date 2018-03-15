@@ -14,19 +14,20 @@
           <h3 class="mb-0">
             {{ $farm->name }}
           </h3>
-          <div class="form-group">
-            <label for="name">Farm Name</label>
-            <input type="text" class="form-control" name="name" value="{{ $farm->name }}">
+          <div class="card-text mb-0 col">
+            <div class="form-group">
+              <label for="name">Farm Name</label>
+              <input type="text" class="form-control" name="name" value="{{ $farm->name }}">
+            </div>
+            <div class="form-group">
+              <label for="city">Farm City</label>
+              <input type="text" class="form-control" name="city" value="{{ $farm->city }}" >
+            </div>
+            <div class="form-group">
+              <label for="website">Farm Website</label>
+              <input type="text" class="form-control" name="website" value="{{ $farm->website }}">
+            </div>
           </div>
-          <div class="form-group">
-            <label for="city">Farm City</label>
-            <input type="text" class="form-control" name="city" value="{{ $farm->city }}" >
-          </div>
-          <div class="form-group">
-            <label for="website">Farm Website</label>
-            <input type="text" class="form-control" name="website" value="{{ $farm->website }}">
-          </div>
-
         </div>
         <img class="card-img-right flex-auto d-none d-md-block" src="{{ asset('img/farm.png') }}" alt="Card image cap">
       </div>
@@ -53,7 +54,7 @@
               Update
             </button>
 
-            <a href="{{ route('farms.index') }}"
+            <a href="{{ url()->previous() }}"
             class="btn btn-outline-primary"
             role="button"
             ><span class="fa fa-undo" aria-hidden="true"></span> Back</a>

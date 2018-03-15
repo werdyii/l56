@@ -15,11 +15,8 @@
     <main class="container pt-4">
         @include('layouts.nav')
 
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
+        @include('layouts.alerts')
+
         @yield('main')
     </main>
 

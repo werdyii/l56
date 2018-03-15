@@ -3,7 +3,7 @@
 @section('main')
 <div class="row justify-content-center">
   <div class="col-md-12">
-    <h1 class="h4 text-uppercase">Show detail</h1>
+    <h1 class="h4 text-uppercase">Show detail - Farm</h1>
 
     <div class="card flex-md-row mb-6 box-shadow h-md-250">
       <div class="card-body d-flex flex-column align-items-start">
@@ -28,7 +28,7 @@
         </form>
 
         <div class="card-text">
-            <a href="{{ route('farms.index') }}"
+            <a href="{{ url()->previous() }}"
             class="btn btn-outline-primary"
             role="button"
             ><span class="fa fa-undo" aria-hidden="true"></span> Back</a>
@@ -48,6 +48,22 @@
       </div>
       <img class="card-img-right flex-auto d-none d-md-block" src="{{ asset('img/farm.png') }}" alt="Card image cap">
     </div>
+
+    <div class="card flex-md-row mb-6 box-shadow h-md-250">
+      <div class="card-body">
+        <div class="card-text">
+          <h3 class="h5 pb-2">Markets</h3>
+          <div class="row form-group">
+            @foreach( $farm->markets as $market )
+              <div class="form-check col-md-6">
+                <a href="{{ route('markets.show', $market) }}">{{ $market->name }}</a>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 @endsection

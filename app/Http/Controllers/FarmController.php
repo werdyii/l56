@@ -36,6 +36,12 @@ class FarmController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate([
+        'name'    => 'bail|required|unique:farms|max:255',
+        'city'    => 'required',
+        'website' => 'bail|required|unique:farms|max:255'
+      ]);
+
       Farm::create($request->all());
       return redirect('farms')->with('status', 'New Farm Created!');
     }
@@ -72,6 +78,12 @@ class FarmController extends Controller
      */
     public function update(Request $request, Farm $farm)
     {
+      $request->validate([
+        'name'    => 'bail|required|max:255|unique:farms,name,'.$farm->id,
+        'city'    => 'required',
+        'website' => 'bail|required|max:255|unique:farms,website,'.$farm->id
+      ]);
+
       $farm->update($request->all());
       $farm->markets()->sync($request->markets);
       return redirect('farms')->with('status', 'Farm Updated!');

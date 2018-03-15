@@ -36,6 +36,12 @@ class MarketController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate([
+        'name'    => 'bail|required|unique:markets|max:255',
+        'city'    => 'required',
+        'website' => 'bail|required|unique:markets|max:255'
+      ]);
+
         Market::create($request->all());
         return redirect('markets')->with('status', 'New Market Created!');
     }
@@ -72,6 +78,12 @@ class MarketController extends Controller
      */
     public function update(Request $request, Market $market)
     {
+      $request->validate([
+        'name'    => 'bail|required|max:255|unique:markets,name,'.$market->id,
+        'city'    => 'required',
+        'website' => 'bail|required|max:255|unique:markets,website,'.$market->id
+      ]);
+
         $market->update($request->all());
         $market->farms()->sync($request->farms);
         return redirect('markets')->with('status', 'Market Updated!');

@@ -23,6 +23,10 @@
         <button type="submit" class="btn btn-primary">
           Create
         </button>
+        <a href="{{ route('markets.index') }}"
+        class="btn btn-outline-primary"
+        role="button"
+        ><span class="fa fa-undo" aria-hidden="true"></span> Back markets</a>
       </div>
     </form>
   </div>
