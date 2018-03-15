@@ -1,4 +1,4 @@
-      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-warning rounded">
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-warning border-bottom rounded">
         <a class="navbar-brand" href="#">LARAVEL 5.6</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
               <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link" href="{{ route('links') }}">Link</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Farm & Merkets</a>

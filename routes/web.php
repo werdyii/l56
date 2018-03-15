@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +16,7 @@ Route::get('/', function () {
 Route::get('/', 'MarketController@index')->name('home');
 Route::resource('markets', 'MarketController');
 Route::resource('farms', 'FarmController');
+Route::get('links', 'LinkController@index')->name('links');
+Route::post('links', 'LinkController@store')->name('links.store');
+Route::delete('links/{link}', 'LinkController@destroy')->name('links.destroy');
+Route::get('{link}', 'LinkController@processHash')->name('links.hash')->where('link','[0-9a-zA-Z]{6}');
