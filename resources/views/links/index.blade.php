@@ -42,7 +42,7 @@
 	                        <form action="{{ route('links.destroy', $link) }}" method="post" class="d-inline-block">
 	                            {{ csrf_field() }}
 	                            {{ method_field('delete') }}
-	                            <button type="submit" class="close position-relative " aria-label="Close">
+	                            <button type="submit" class="close" aria-label="Close">
 								  <span aria-hidden="true" class="align-baseline">&times;</span>
 								</button>
 	                        </form>

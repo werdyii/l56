@@ -16,6 +16,25 @@ Route::get('/', function () {
 Route::get('/', 'MarketController@index')->name('home');
 Route::resource('markets', 'MarketController');
 Route::resource('farms', 'FarmController');
+
+// blog resource
+Route::resource('blog', 'PostController', [ 'except' => [ 'show' ] ]);
+Route::get('blog/{id}/delete/', [ 'as' => 'blog.delete', 'uses' => 'PostController@delete' ]);
+Route::get('blog/{post}', [ 'as' => 'blog.show', 'uses' => 'PostController@show' ]);
+
+// dashboard
+Route::get('dashboard',function(){
+	return view('layouts.dashboard');
+})->name('dashboard');
+
+
+Route::get('register','RegistrationController@create')->name('register');
+Route::post('register','RegistrationController@store')->name('register.store');
+Route::get('login','SessionController@create')->name('login');
+Route::post('login','SessionController@store')->name('login.store');
+Route::get('logout','SessionController@destroy')->name('logout');
+
+// links resource
 Route::get('links', 'LinkController@index')->name('links');
 Route::post('links', 'LinkController@store')->name('links.store');
 Route::delete('links/{link}', 'LinkController@destroy')->name('links.destroy');

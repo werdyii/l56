@@ -3,9 +3,12 @@
 
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <h1 class="h4 text-uppercase">Create a Farm</h1>
 
-    <form class="card" action="{{ route('farms.store') }}" method="post">
+    <form class="card border-warning" action="{{ route('farms.store') }}" method="post">
+      <div class="card-header bg-warning ">
+        <h1 class="h4 text-uppercase">Create a Farm</h1>
+      </div>
+
       <div class="card-body">
         {{ csrf_field() }}
         <div class="form-group">
@@ -20,11 +23,11 @@
           <label for="website">Farm Website</label>
           <input type="text" class="form-control" name="website" placeholder="Farm Website">
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-secondary">
           Create
         </button>
         <a href="{{ route('farms.index') }}"
-        class="btn btn-outline-primary"
+        class="btn btn-outline-secondary"
         role="button"
         ><span class="fa fa-undo" aria-hidden="true"></span> Back farms</a>
       </div>

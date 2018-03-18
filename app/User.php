@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    /**
+     * A user can have many posts
+     *
+     * @return mixed
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class)->orderBy('created_at', 'desc');
+    }
+
 }

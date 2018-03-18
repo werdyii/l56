@@ -31,6 +31,6 @@ class CreateFarmMarketPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farm_market_pivot');
+        Schema::dropIfExists('farm_market');
     }
 }
