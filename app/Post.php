@@ -91,4 +91,26 @@ class Post extends Model
 	{
 		return add_paragraphs( filter_url( e($this->content) ) );
 	}
+
+	public function scopeFilter($query, $filters)
+	{
+		if( array_has( $filters, 'month' ) ){
+			$query->whereMonth('created_at', $filters['month'] );
+		}
+		if( array_has( $filters, 'year' ) ){
+			$query->whereYear('created_at', $filters['year'] );
+		}
+	}
+
+	static function archives()
+	{
+		return static::selectRaw(' year(created_at) as year,
+            month(created_at) as month,
+            monthname(created_at) as monthname,
+            count(*) published'
+        )
+        ->groupBy('year','month','monthname')
+        ->orderByRaw(' min(created_at) desc ')
+        ->get();
+	}
 }

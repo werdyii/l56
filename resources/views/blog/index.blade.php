@@ -40,8 +40,7 @@
 	@endforelse
 
 
-		{{ $posts->links('blog.pagination') }}
-	</nav>
+	{{ $posts->appends(['year' => request('year'), 'month' => request('month')])->links('blog.pagination') }}
 
 @endsection
 

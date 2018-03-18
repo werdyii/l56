@@ -19,8 +19,18 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest('created_at')->simplePaginate(10);
-        return view('blog.index', compact('posts'));
+        $posts = Post::latest('created_at')
+        ->filter( request( ['year','month'] ) )
+        ->simplePaginate(10);
+        // ->get();
+        //dd( $posts);
+        //->simplePaginate(10);
+
+        //$archives = Post::archives()
+        //->toArray();
+        // return $archives;
+
+        return view('blog.index', compact('posts','archives'));
     }
 
     /**
