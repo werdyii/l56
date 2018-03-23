@@ -2,9 +2,9 @@
 @section('main')
 
 <div class="row justify-content-center">
-  <div class="col-md-6">
+  <div class="col-md-4">
 
-    <form class="card border-warning" action="{{ route('login.store') }}" method="post">
+    <form class="card border-warning my-3" action="{{ route('login.store') }}" method="post">
       <div class="card-header bg-warning ">
         <h1 class="h4 text-uppercase">Login</h1>
       </div>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Password          <a href="#"> Forgot password </a></label>
           <input type="password" class="form-control @if ($errors->has('password')) is-invalid @endif" name="password" required>
           @if ($errors->has('password'))
             <div class="invalid-feedback">
@@ -32,15 +32,18 @@
           @endif
         </div>
 
-        <button type="submit" class="btn btn-secondary">
+        <button type="submit" class="btn btn-success btn-block">
           Login
         </button>
-        <a href="{{ route('register') }}"   class="btn btn-outline-secondary" role="button"> Registration </a>
-        <a href="#"   class="btn btn-outline-secondary" role="button"> Forgot password </a>
-        <a href="{{ route('blog.index') }}" class="btn btn-outline-secondary" role="button"
-        ><span class="fa fa-undo" aria-hidden="true"></span> Back </a>
+
       </div>
     </form>
+    <div class="card border-warning my-3">
+      <p class="p-3 text-center">
+        New to LARAVEL BloG
+        <a href="{{ route('register') }}" > Create an account. </a>
+      </p>
+    </div>
   </div>
 </div>
 @endsection

@@ -15,5 +15,12 @@ class ExampleTest extends TestCase
     public function testBasicTest()
     {
         $this->assertTrue(true);
+        // Given (Daný)
+        // Mam 2 zaznamy v DB posts
+
+        // When (Kedy)
+        // Ked budem zobrazovať archív
+
+        // Then (Potom)
     }
 }

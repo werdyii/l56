@@ -25,7 +25,6 @@ class PostController extends Controller
         // ->get();
         //dd( $posts);
         //->simplePaginate(10);
-
         //$archives = Post::archives()
         //->toArray();
         // return $archives;

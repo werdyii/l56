@@ -2,7 +2,7 @@
 @section('main')
 
 <div class="row justify-content-center">
-  <div class="col-md-6">
+  <div class="col-md-5">
 
     <form class="card border-warning" action="{{ route('register.store') }}" method="post">
       <div class="card-header bg-warning ">
@@ -52,15 +52,19 @@
           @endif
         </div>
 
-        <button type="submit" class="btn btn-secondary">
-          Create
+        <button type="submit" class="btn btn-success btn-block my-2">
+          Create an account.
         </button>
-        <a href="{{ route('login') }}"   class="btn btn-outline-secondary" role="button"> Login </a>
-        <a href="{{ route('blog.index') }}" class="btn btn-outline-secondary" role="button"
-        ><span class="fa fa-undo" aria-hidden="true"></span> Back </a>
+
 
       </div>
     </form>
+    <div class="card border-warning my-3">
+      <p class="p-3 text-center">
+        or
+        <a href="{{ route('login') }}"> Log In </a>
+      </p>
+    </div>
   </div>
 </div>
 @endsection
