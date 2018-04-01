@@ -22,6 +22,13 @@ Route::resource('blog', 'PostController', [ 'except' => [ 'show' ] ]);
 Route::get('blog/{id}/delete/', [ 'as' => 'blog.delete', 'uses' => 'PostController@delete' ]);
 Route::get('blog/{post}', [ 'as' => 'blog.show', 'uses' => 'PostController@show' ]);
 
+// season resource
+Route::get('season/{season}/delete', 'SeasonController@delete')->name('season.delete');
+Route::resource('season', 'SeasonController');
+
+// season resource
+Route::resource('game', 'GameController');
+
 // dashboard
 Route::get('dashboard',function(){
 	return view('layouts.dashboard');

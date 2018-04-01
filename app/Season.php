@@ -24,6 +24,27 @@ class Season extends Model
     {
       return $this->belongsToMany('App\User')->withPivot('team')->withTimestamps();
     }
+
+    /**
+     * A season can have many users
+     *
+     * @return mixed
+     */
+    public function blue()
+    {
+      return $this->users()->wherePivot('team','modry');
+    }
+
+    /**
+     * A season can have many users
+     *
+     * @return mixed
+     */
+    public function white()
+    {
+      return $this->users()->wherePivot('team','biely');
+    }
+
     /**
      * A season can have many games
      *

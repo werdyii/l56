@@ -23,12 +23,16 @@
           @if( body_id() == 'dashboard')<span class="sr-only">(current)</span>@endif
         </a>
       </li>
+
+      {{-- Links --}}
       <li class="nav-item @if( body_id() == 'links') active @endif">
         <a class="nav-link" href="{{ route('links') }}">Link
           @if( body_id() == 'links')<span class="sr-only">(current)</span>@endif
         </a>
       </li>
-      <li class="nav-item dropdown @if( ( nav_active_class() == 'markets' ) || ( nav_active_class() == 'farms' ) || ( body_id() == 'home' ) ) active @endif ">
+
+      {{-- Farm & Merkets --}}
+      <li class="nav-item dropdown @if( in_array( nav_active_class(), array('markets','farms') ) || ( body_id() == 'home' ) ) active @endif ">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Farm & Merkets
           @if( ( nav_active_class() == 'markets' ) || ( nav_active_class() == 'farms' ) || ( body_id() == 'home' ) ) <span class="sr-only">(current)</span> @endif
         </a>
@@ -40,6 +44,19 @@
           <a class="dropdown-item" href="{{ route('markets.create') }}">New market</a>
         </div>
       </li>
+
+      {{-- NHL --}}
+      <li class="nav-item dropdown @if(  in_array( nav_active_class(), array('season','game') ) ) active @endif ">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NHL</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown09">
+          <a class="dropdown-item" href="{{ route('season.index') }}">Season</a>
+          <a class="dropdown-item" href="{{ route('game.index') }}">Game</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{-- route('.index') --}}">Player</a>
+          <a class="dropdown-item" href="{{-- route('markets.create') --}}">Štatistika</a>
+        </div>
+      </li>
+
     </ul>
     <form class="form-inline my-2 my-md-0">
       <input class="form-control" type="text" placeholder="Search" aria-label="Search">
