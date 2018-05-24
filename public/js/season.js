@@ -16,12 +16,32 @@
       });
     }
 
+    function _setPlayers(team) {
+      var aTeam = $('input[name='+team+']').val().split(',').map((x) => Number.parseInt(x, 10));
+      $("select#players > option").each(function(){
+          //console.log(typeof $(this).val(), aTeam, aTeam.includes($(this).val()));
+          if(  aTeam.includes( Number.parseInt( $(this).val() , 10) ) )
+            $(this).detach();
+      });
+    }
+
+    $('.input-group.date').datepicker({
+      format: "mm. dd. yyyy",
+      todayBtn: "linked",
+      language: "sk",
+      orientation: "bottom auto",
+      daysOfWeekHighlighted: "0,6",
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true
+    });
     // Init formular data
     _setOldTeamPlayers("blue");
     _setOldTeamPlayers("white");
     _setChange("blue");
     _setChange("white");
-
+    _setPlayers("blue");
+    _setPlayers("white");
 
 /**
     $( "#start_date" ).datepicker({

@@ -27,7 +27,7 @@ Route::get('season/{season}/delete', 'SeasonController@delete')->name('season.de
 Route::resource('season', 'SeasonController');
 
 // season resource
-Route::resource('game', 'GameController');
+Route::resource('games', 'GameController');
 
 // dashboard
 Route::get('dashboard',function(){

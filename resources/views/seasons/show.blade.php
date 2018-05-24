@@ -51,7 +51,7 @@
 			@forelse( $season->games()->sortByDesc('game_date') as $game )
 		    <tr>
 		      <th scope="row">{{ $game->id }}</th>
-		      <td><a href="{{ route('game.show', $game) }}">{{ $game->game_date }}</a></td>
+		      <td><a href="{{ route('games.show', $game) }}">{{ $game->game_date }}</a></td>
 		      <td>{{ $game->invitation }}</td>
 		      <td>{{ $game->played }}</td>
 		    </tr>

@@ -22,3 +22,6 @@
 	</article>
 
 @endsection
+@push('aside')
+    @include('blog.aside')
+@endpush

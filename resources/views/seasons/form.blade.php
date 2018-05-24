@@ -9,9 +9,9 @@
 
           <div class="form-group col-md-4">
             <label for="start_date">Start date</label>
-            <div class="input-group">
+            <div class="input-group date">
               <input type="date" class="form-control" name="start_date" placeholder="datum" value="{{ $season->start_date or old('start_date')  }}">
-              <div class="input-group-append">
+              <div class="input-group-append input-group-addon">
                 <button class="btn btn-outline-secondary" type="button">datum</button>
               </div>
             </div>
@@ -19,7 +19,7 @@
 
           <div class="form-group col-md-4">
             <label for="end_date">End date</label>
-            <div class="input-group">
+            <div class="input-group date">
               <input type="date" class="form-control" name="end_date" placeholder="datum" value="{{ $season->end_date or old('end_date') }}">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button">datum</button>

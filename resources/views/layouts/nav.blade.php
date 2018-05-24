@@ -46,11 +46,11 @@
       </li>
 
       {{-- NHL --}}
-      <li class="nav-item dropdown @if(  in_array( nav_active_class(), array('season','game') ) ) active @endif ">
+      <li class="nav-item dropdown @if(  in_array( nav_active_class(), array('season','games') ) ) active @endif ">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NHL</a>
         <div class="dropdown-menu" aria-labelledby="dropdown09">
           <a class="dropdown-item" href="{{ route('season.index') }}">Season</a>
-          <a class="dropdown-item" href="{{ route('game.index') }}">Game</a>
+          <a class="dropdown-item" href="{{ route('games.index') }}">Games</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{-- route('.index') --}}">Player</a>
           <a class="dropdown-item" href="{{-- route('markets.create') --}}">Štatistika</a>

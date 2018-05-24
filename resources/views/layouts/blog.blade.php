@@ -108,7 +108,7 @@
         </section><!-- /.blog-main -->
 
         <aside class="col-md-4 blog-sidebar">
-            @include('blog.aside')
+            @stack('aside')
         </aside><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->

@@ -21,6 +21,7 @@ class PostController extends Controller
     {
         $posts = Post::latest('created_at')
         ->filter( request( ['year','month'] ) )
+        ->with('user')
         ->simplePaginate(10);
         // ->get();
         //dd( $posts);

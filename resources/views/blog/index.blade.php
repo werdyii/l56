@@ -43,7 +43,9 @@
 	{{ $posts->appends(['year' => request('year'), 'month' => request('month')])->links('blog.pagination') }}
 
 @endsection
-
+@push('aside')
+    @include('blog.aside')
+@endpush
 <!--
 	<div class="blog-post">
 		<h2 class="blog-post-title">Sample blog post</h2>

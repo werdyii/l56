@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('main')
-
 <div class="row justify-content-center">
   <div class="col-md-12">
 
@@ -26,6 +25,11 @@
   </div>
 </div>
 @endsection
+@push('style')
+  <link rel="stylesheet" href="{{ asset('css/datapicker/bootstrap-datepicker.min.css') }}">
+@endpush
 @push('scripts')
+  <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+  <script src="{{ asset('js/locales/bootstrap-datepicker.sk.min.js') }}"></script>
   <script src="{{ asset('js/season.js') }}"></script>
 @endpush
