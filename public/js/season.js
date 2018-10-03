@@ -1,5 +1,9 @@
   $(document).ready(function() {
-    try{
+    //try{
+    function _str2int(element){
+      return parseInt(element,10);
+    }
+
 
     function _setChange(team){
       var values = $("select#player_"+team+" > option").map(function() { return $(this).val(); }).get().join();
@@ -8,19 +12,19 @@
     }
 
     function _setOldTeamPlayers(team) {
-      var aTeam = $('input[name='+team+']').val().split(',').map((x) => Number.parseInt(x, 10));
+      var aTeam = $('input[name='+team+']').val().split(',').map( _str2int );
       $("select#players > option").each(function(){
           //console.log(typeof $(this).val(), aTeam, aTeam.includes($(this).val()));
-          if(  aTeam.includes( Number.parseInt( $(this).val() , 10) ) )
+          if(  aTeam.includes( _str2int( $(this).val() ) ) )
             $(this).appendTo("select#player_"+team );
       });
     }
 
     function _setPlayers(team) {
-      var aTeam = $('input[name='+team+']').val().split(',').map((x) => Number.parseInt(x, 10));
+      var aTeam = $('input[name='+team+']').val().split(',').map( _str2int );
       $("select#players > option").each(function(){
           //console.log(typeof $(this).val(), aTeam, aTeam.includes($(this).val()));
-          if(  aTeam.includes( Number.parseInt( $(this).val() , 10) ) )
+          if(  aTeam.includes( _str2int( $(this).val() ) ) )
             $(this).detach();
       });
     }
@@ -97,6 +101,6 @@
       return false;
     });
 
- }catch(e){}
+ //}catch(e){}
  return false;
 });

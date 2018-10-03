@@ -6,3 +6,9 @@ li.nav-item.active {
     border-bottom: 2px solid orange;
     font-weight: 600;
 }
+input::-webkit-calendar-picker-indicator{
+  display: none;
+}
+input[type="date"]::-webkit-input-placeholder{ 
+  visibility: hidden !important;
+}
